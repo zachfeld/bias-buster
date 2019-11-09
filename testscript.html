@@ -31,13 +31,15 @@
             
             const { content, domain, title } = data;
 
+            const entities = content['entities'];
             
-            console.log(content);
+            for (i = 0; i < entities.length; i++){
+              console.log(entities[i]);
+            }
+            
         };
 
-        test = getData(buildPost);
-
-        console.log(test);
+        getData(buildPost);
 
     </script>
   </body>
