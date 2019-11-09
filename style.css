@@ -1,17 +1,20 @@
-h1{
+
+
+h2{
     color:#EFEFEF
 }
 
-.navbar {
-    background-color: #6A97F2;
+body {
+    font-family: 'Playfair Display', serif;
 }
 
-.navbar-brand {
-    color: white;
+.navbar {
+    background-color: #6a97f2;
+    vertical-align: center;
 }
 
 .navbar-brand:hover {
-    color: #386FA4;
+    color: #386Fa4;
 }
 #jumboDiv{
     background-image:
@@ -20,6 +23,7 @@ h1{
                     rgba(0, 0, 0, 0.5)
             ),
             url('https://i.pinimg.com/originals/11/b6/76/11b6769c8f2ea91b25fa0bb10bcaf4ab.jpg');
+    border-radius: 0 !important;
 }
 
 #submitButton{
