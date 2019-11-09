@@ -28,11 +28,16 @@
         async function getData(buildPost){
             const response = await fetch(api_url, buildPost);
             const data = await response.json();
+            
+            const { content, domain, title } = data;
 
-            console.log(data);
+            
+            console.log(content);
         };
 
-        getData(buildPost);
+        test = getData(buildPost);
+
+        console.log(test);
 
     </script>
   </body>
