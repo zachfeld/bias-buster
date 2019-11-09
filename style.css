@@ -1,32 +1,20 @@
+h2{color:#EFEFEF}
 
-
-h2{
-    color:#EFEFEF
-}
-
-body {
-    font-family: 'Playfair Display', serif;
-}
+body {font-family: 'Playfair Display', serif;}
 
 .navbar {
     background-color: #6a97f2;
     vertical-align: center;
 }
-
-.navbar-brand:hover {
-    color: #386Fa4;
-}
+#bpcText{bottom:2px}
+.navbar-brand:hover {color: #386Fa4;}
 #jumboDiv{
     background-image:
-            linear-gradient(
-                    rgba(0, 0, 0, 0.5),
-                    rgba(0, 0, 0, 0.5)
-            ),
+            linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),
             url('https://i.pinimg.com/originals/11/b6/76/11b6769c8f2ea91b25fa0bb10bcaf4ab.jpg');
     border-radius: 0 !important;
 }
-
-#submitButton{
-    display:block;
-    float:left;
-}
+#submitButton{display:block; float:left;}
+#jumboForm{display: inline-block; text-align:center;justify-content:center !important;}
+#formTitle{text-align:center;}
+.form-actions(margin:0;)
