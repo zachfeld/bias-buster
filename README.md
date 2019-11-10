@@ -1,4 +1,4 @@
-# news-app
+# bias-buster
 news suggestion application for Hackathon 2019
 
 # News is hard...
