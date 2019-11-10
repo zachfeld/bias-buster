@@ -19,7 +19,7 @@
   </head>
   <body>
     <nav class="navbar bg-dark navbar-dark">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="index.php">
         <img
           src="images/newspaper.svg"
           width="7%"
@@ -92,6 +92,7 @@
               </button>
               </div>
               </form>
+          </form>
         </div>
       </div>
       <!-- Info Box -->
@@ -111,5 +112,6 @@
           on facts as opposed to noise and misdirection.
         </p>
       </main>
+    </div>
   </body>
 </html>

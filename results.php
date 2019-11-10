@@ -16,7 +16,7 @@
   <body id="resultsBody">
     <!-- Navigation -->
     <nav class="navbar bg-dark navbar-dark">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="index.php">
         <img
           src="images/newspaper.svg"
           width="7%"
@@ -191,8 +191,8 @@
 
 			//only run if we have not greyed out the bars, etc.
 			if (decorate){
-				document.getElementById("title-percent-count").innerHTML = Math.round(titlePercent * 10) / 10 + "%";
-				document.getElementById("content-percent-count").innerHTML = Math.round(contentPercent * 10) / 10 + "%";
+				document.getElementById("title-percent-count").innerHTML = Math.round(titlePercent * 10) / 10 + "% - " + titleDecision;
+				document.getElementById("content-percent-count").innerHTML = Math.round(contentPercent * 10) / 10 + "% - " + contentDecision;
 				
 
 				let contentColor = "rgb" + "(" + ((1 - contentScore) * 100 ) + "%, " + (contentScore * 100) + "%, 15%)";
@@ -212,9 +212,8 @@
 				keywords = content['keywords'];
 				keywordsArray = []
 				timesURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q="
-				for (let i = 0; i < keywords.length; i++){
+				for (let i = 1; i < keywords.length; i++){
 					keywordsArray[i] = keywords[i]['keyword'];
-
 					//append top 3 keywords
 					if (i < 3){
 						timesURL += keywordsArray[i] + " ";
@@ -282,7 +281,7 @@
 						const newTitleScore = title['score'];
 
 						//if the other searched articles are better than the current article
-						if (newTitleScore > titleScore){
+						if (newTitleScore > .6){
 							
 							let deck = document.getElementById('deck');
 							let line = "<div class='col'>";
