@@ -1,6 +1,7 @@
-h2{color:#EFEFEF}
+*{box-sizing: border-box;}
 
 body {font-family: 'Playfair Display', serif;}
+#resultsBody{background:#c4c3c0;}
 
 .navbar {
     background-color: #6a97f2;
@@ -17,4 +18,25 @@ body {font-family: 'Playfair Display', serif;}
 #submitButton{display:block; float:left;}
 #jumboForm{display: inline-block; text-align:center;justify-content:center !important;}
 #formTitle{text-align:center;}
-.form-actions(margin:0;)
+
+/* Progress Bar */
+#percent-count{
+    width: 450px; height: 60px; margin;
+    font-size: 38px; text-align: center; color: black;
+    display:block;
+}
+#progress-bar {
+    width: 456px;
+    height: 26px;
+    background-color: #bbb;
+    border-radius: 13px;
+    padding: 3px;
+    display:inline-block
+}
+  
+#progress {
+    width: 270px;
+    height: 20px;
+    border-radius:10px;
+    background-color: darkturquoise;
+}
