@@ -25,15 +25,15 @@ body {font-family: 'Playfair Display', serif; background: rgb(243, 248, 253);}
     url('https://i.pinimg.com/originals/11/b6/76/11b6769c8f2ea91b25fa0bb10bcaf4ab.jpg');}
 #resultContainer{
     width:70%;
-    height:100%;
+    height:auto;
     background: rgb(243, 248, 253);
 }
 /* Progress Bar */
-#percent-count{
+#title-percent-count{
     height: 60px;
     font-size: 38px; color: black;
 }
-#progress-bar {
+#title-progress-bar {
     width: 75%;
     height: 26px;
     background-color: #bbb;
@@ -42,8 +42,27 @@ body {font-family: 'Playfair Display', serif; background: rgb(243, 248, 253);}
     display:inline-block
 }
   
-#progress {
-    width: 70%;
+#title-progress {
+    width: 15%;
+    height: 20px;
+    border-radius:10px;
+    background-color: darkturquoise;
+}
+#content-percent-count{
+    height: 60px;
+    font-size: 38px; color: black;
+}
+#content-progress-bar {
+    width: 75%;
+    height: 26px;
+    background-color: #bbb;
+    border-radius: 13px;
+    padding: 3px;
+    display:inline-block
+}
+  
+#content-progress {
+    width: 15%;
     height: 20px;
     border-radius:10px;
     background-color: darkturquoise;

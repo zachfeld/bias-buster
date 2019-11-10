@@ -46,10 +46,15 @@
     <div class="container" id="resultContainer">
       <div class="justify-content-center text-center">
         <!-- Page Content -->
-        <h1>Confidence Score:</h1>
-        <div id="percent-count">test</div>
-        <div id="progress-bar">
-          <div id="progress"></div>
+        <h1>Title Confidence Score:</h1>
+        <div id="title-percent-count">test</div>
+        <div id="title-progress-bar">
+          <div id="title-progress"></div>
+        </div>
+        <h1>Content Confidence Score:</h1>
+        <div id="content-percent-count">test</div>
+        <div id="content-progress-bar">
+          <div id="content-progress"></div>
         </div>
 
         <!-- Input confidence score thingy -->
@@ -62,14 +67,41 @@
         <hr />
 
         <h1 class="resultFont">Other Reliable Sources:</h1>
+
+        <!-- Cards for Suggestions-->
+        <div class="card-deck">
+          <div class="card">
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Article Title</h5>
+              <p class="card-text">Input article description here</p>
+            </div>
+            <a href="#" class="btn btn-light stretched-link"></a>
+          </div>
+
+          <div class="card">
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Article Title</h5>
+              <p class="card-text">Input article description here</p>
+            </div>
+            <a href="#" class="btn btn-light stretched-link"></a>
+          </div>
+
+          <div class="card">
+            <img src="#" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Article Title</h5>
+              <p class="card-text">Input article description here</p>
+            </div>
+            <a href="#" class="btn btn-light stretched-link"></a>
+          </div>
+        </div>
       </div>
 
-      
-	  <div id=betterTitleScore>
-			
-		</div>
-		</div>
-	</body>
+      <div id="betterTitleScore"></div>
+    </div>
+  </body>
 	
   
 
@@ -80,7 +112,6 @@
     $articleTitle = $_POST['articleTitle'];
     $articleURL = $_POST['articleURL'];
 	$articleContent = $_POST['articleContent'];
-
 	$articleContentFixed = trim(preg_replace('/\s+/', ' ', $articleContent));
     
 ?>
@@ -91,52 +122,40 @@
     	const title = "<?php echo $articleTitle ?>";
     	const content = "<?php echo $articleContentFixed ?>";
 		
-
 		const data = {
 			"url": URL,
 			"title": title,
 			"content": content
 		};
 		console.log(data);
-
 		async function getData(articleData, rerun){
-
 			const buildPost = {
 			"headers": {"content-type" : "application/json; charset=UTF-8"},
 			"body": JSON.stringify(articleData),
 			"method": "POST",
 			"mode": "cors"
 			};
-
 			const response = await fetch(api_url, buildPost);
 			const data = await response.json();
-
 			const { content, domain, title } = data;
 			
 			console.log(data);
 			
 			const domainName = domain['domain'];
 			const domainTrustLevel = domain['category'];
-
 			const titleDecision = title['decision'];
 			const titleScore = title['score'];
-
 			const contentDecision = content['decision'];
 			const contentScore = content['score'];
-
 			document.getElementById("progress").style.background = "red";
 			document.getElementById("progress").style.width = "" + (contentScore * 100) + "%" ;
-
-
 			console.log(domainName);
 			console.log(domainTrustLevel);
 			console.log(titleDecision);
 			console.log(titleScore);
 			console.log(contentDecision);
 			console.log(contentScore);
-
 			//document.getElementById("contentScore").innerHTML = contentScore;
-
 			
 			if (rerun){
 				//get keywords from input article content
@@ -156,12 +175,10 @@
 				timesURL += "&api-key=KAdEYfi1vX5YCl9Aiamlu1Q7zj0q9R8N";
 				
 				console.log(timesURL);
-
 				//get articles from NYT
 				async function getArticles(url, titleScore, contentScore){
 					const response = await fetch(timesURL);
 					const data = await response.json();
-
 					//array of all article objects
 					articles = data['response']['docs'];
 					articleStripped = []
@@ -172,30 +189,24 @@
 							"title": articles[i]['headline']['main'],
 							"content": articles[i]['snippet'],
 						};
-
 						const secondCall = {
 							"headers": {"content-type" : "application/json; charset=UTF-8"},
 							"body": JSON.stringify(articleStripped[i]),
 							"method": "POST",
 							"mode": "cors"
 						};
-
 						const response = await fetch(api_url, secondCall);
 						const secondData = await response.json();
-
 						
 						const { content, domain, title } = secondData;
 						console.log("Here");
 						console.log(content);
 						
 						
-
 						const newTitleDecision = title['decision'];
 						const newTitleScore = title['score'];
-
 						const newContentDecision = content['decision'];
 						const newContentScore = content['score'];
-
 						if (newTitleScore > titleScore){
 							document.getElementById("betterTitleScore").innerHTML = "this one is better <br />";
 							document.getElementById("betterTitleScore").innerHTML += articleStripped[i]['url'];
@@ -203,21 +214,15 @@
 					}
 					
 					//console.log(articleStripped);
-
 					
 				};
-
 				getArticles(timesURL, titleScore, contentScore);
-
 				
 			}
-
 		};
-
 		getData(data, true);
 			
 		
-
 		
     	
     </script>

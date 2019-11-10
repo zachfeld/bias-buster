@@ -46,10 +46,15 @@
     <div class="container" id="resultContainer">
       <div class="justify-content-center text-center">
         <!-- Page Content -->
-        <h1>Confidence Score:</h1>
-        <div id="percent-count">100% Test</div>
-        <div id="progress-bar">
-          <div id="progress"></div>
+        <h1>Title Confidence Score:</h1>
+        <div id="title-percent-count">test</div>
+        <div id="title-progress-bar">
+          <div id="title-progress"></div>
+        </div>
+        <h1>Content Confidence Score:</h1>
+        <div id="content-percent-count">test</div>
+        <div id="content-progress-bar">
+          <div id="content-progress"></div>
         </div>
 
         <!-- Input confidence score thingy -->
@@ -62,11 +67,39 @@
         <hr />
 
         <h1 class="resultFont">Other Reliable Sources:</h1>
+
+        <!-- Cards for Suggestions-->
+        <div class="card-deck">
+          <div class="card">
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Article Title</h5>
+              <p class="card-text">Input article description here</p>
+            </div>
+            <a href="#" class="btn btn-light stretched-link"></a>
+          </div>
+
+          <div class="card">
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Article Title</h5>
+              <p class="card-text">Input article description here</p>
+            </div>
+            <a href="#" class="btn btn-light stretched-link"></a>
+          </div>
+
+          <div class="card">
+            <img src="#" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Article Title</h5>
+              <p class="card-text">Input article description here</p>
+            </div>
+            <a href="#" class="btn btn-light stretched-link"></a>
+          </div>
+        </div>
       </div>
 
-      <!-- Bootstrap core JavaScript -->
-      <script src="vendor/jquery/jquery.min.js"></script>
-      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <div id="betterTitleScore"></div>
     </div>
   </body>
 </html>
