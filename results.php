@@ -221,7 +221,7 @@
 					
 				}
 				//append api key
-				timesURL += "&api-key=KAdEYfi1vX5YCl9Aiamlu1Q7zj0q9R8N";
+				timesURL += "&api-key=";
 				
 				console.log(timesURL);
 
