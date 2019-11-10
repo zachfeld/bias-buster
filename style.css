@@ -1,7 +1,10 @@
 *{box-sizing: border-box;}
+html,body{
+    height:100%
+}
 
-body {font-family: 'Playfair Display', serif; background: rgb(243, 248, 253)}
-#resultsBody{background:#c4c3c0;}
+body {font-family: 'Playfair Display', serif; background: rgb(243, 248, 253);}
+#formTitle{color:aliceblue;}
 
 .navbar {
     background-color: #6a97f2;
@@ -18,7 +21,13 @@ body {font-family: 'Playfair Display', serif; background: rgb(243, 248, 253)}
 #submitButton{display:block; float:left;}
 #jumboForm{display: inline-block; text-align:center;justify-content:center !important;}
 #formTitle{text-align:center;}
-
+#resultsBody{background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),
+    url('https://i.pinimg.com/originals/11/b6/76/11b6769c8f2ea91b25fa0bb10bcaf4ab.jpg');}
+#resultContainer{
+    width:70%;
+    height:100%;
+    background: rgb(243, 248, 253);
+}
 /* Progress Bar */
 #percent-count{
     height: 60px;
@@ -39,7 +48,4 @@ body {font-family: 'Playfair Display', serif; background: rgb(243, 248, 253)}
     border-radius:10px;
     background-color: darkturquoise;
 }
-#resultContainer{
-    width:70%;
-    background:white;
-}
+
