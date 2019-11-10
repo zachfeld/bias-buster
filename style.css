@@ -1,6 +1,6 @@
 *{box-sizing: border-box;}
 
-body {font-family: 'Playfair Display', serif;}
+body {font-family: 'Playfair Display', serif; background: rgb(243, 248, 253)}
 #resultsBody{background:#c4c3c0;}
 
 .navbar {
@@ -21,12 +21,11 @@ body {font-family: 'Playfair Display', serif;}
 
 /* Progress Bar */
 #percent-count{
-    width: 450px; height: 60px; margin;
-    font-size: 38px; text-align: center; color: black;
-    display:block;
+    height: 60px;
+    font-size: 38px; color: black;
 }
 #progress-bar {
-    width: 456px;
+    width: 75%;
     height: 26px;
     background-color: #bbb;
     border-radius: 13px;
@@ -35,8 +34,12 @@ body {font-family: 'Playfair Display', serif;}
 }
   
 #progress {
-    width: 270px;
+    width: 70%;
     height: 20px;
     border-radius:10px;
     background-color: darkturquoise;
+}
+#resultContainer{
+    width:70%;
+    background:white;
 }
